@@ -5,7 +5,7 @@ import { stringifyParams } from '@/utils/query';
 type ProxyParams = {
     url: string;
     data?: Record<string,any>;
-    config: AxiosRequestConfig;
+    config?: AxiosRequestConfig;
 }
 
 export class AxiosProxy {

@@ -13,6 +13,7 @@ export default defineConfig({
       '@routers': path.resolve(__dirname, './src/routers'),
       '@types': path.resolve(__dirname, './src/types'),
       '@wrappers': path.resolve(__dirname, './src/wrappers'),
+      '@modules': path.resolve(__dirname, './src/modules'),
     }
   }
 })

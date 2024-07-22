@@ -2,6 +2,7 @@ import axios from "axios";
 import { getCookieValue } from "@/utils/cookie";
 import { decrypt } from "@/utils/auth";
 
+
 const instance = axios.create({
     baseURL: import.meta.env.VITE_API_URL,
     timeout: 10000,
@@ -17,18 +18,9 @@ instance.interceptors.request.use((config) => {
 
     //adding cookie to header
     config.headers['Authorization'] = `Bearer ${decryptedToken}`;
-    console.log('config', config)
     return config;
 });
 
-instance.interceptors.response.use((config) => {
-    try{
-        console.log('response', config)
-        return config;
-    } catch(err) {
-        console.log('response error', config)
-        return config;
-    }
-});
+instance.interceptors.response.use((config) => config);
 
 export default instance;
