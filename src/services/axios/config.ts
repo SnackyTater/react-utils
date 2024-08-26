@@ -14,10 +14,9 @@ const instance = axios.create({
 
 instance.interceptors.request.use((config) => {
     const encryptedToken = getCookieValue('token');
-    const decryptedToken = decrypt(encryptedToken);
 
     //adding cookie to header
-    config.headers['Authorization'] = `Bearer ${decryptedToken}`;
+    config.headers['Authorization'] = `Bearer ${'decryptedToken'}`;
     return config;
 });
 

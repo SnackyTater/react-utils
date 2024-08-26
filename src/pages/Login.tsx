@@ -14,8 +14,8 @@ const LoginPage = () => {
         })
     }
 
-    return <div>
-        <p>login page</p>
+    return <div style={{padding: '20px'}}>
+        <p>login page awdawdawd</p>
         <div onClick={handleLogin}>login button</div>
     </div>
 };
