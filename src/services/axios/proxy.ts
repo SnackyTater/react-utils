@@ -48,7 +48,7 @@ export class AxiosProxy {
         return instance.put(url, data, config).then((data) => {
             cancel.delete(url);
             return data;
-        });;
+        });
     }
     delete = async(param: ProxyParams) => {
         const {url, data, config = {}} = param;
@@ -64,6 +64,6 @@ export class AxiosProxy {
         return instance.delete(url, config).then((data) => {
             cancel.delete(url);
             return data;
-        });;
+        });
     }
 }

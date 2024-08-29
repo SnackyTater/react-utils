@@ -1,7 +1,4 @@
 import axios from "axios";
-import { getCookieValue } from "@/utils/cookie";
-import { decrypt } from "@/utils/auth";
-
 
 const instance = axios.create({
     baseURL: import.meta.env.VITE_API_URL,
@@ -13,8 +10,6 @@ const instance = axios.create({
 });
 
 instance.interceptors.request.use((config) => {
-    const encryptedToken = getCookieValue('token');
-
     //adding cookie to header
     config.headers['Authorization'] = `Bearer ${'decryptedToken'}`;
     return config;

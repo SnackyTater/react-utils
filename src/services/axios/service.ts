@@ -1,5 +1,5 @@
 export class AxiosService {
-    fetch = async(action: Function) => {
+    fetch = async(action: () => Promise<any>) => {
         try{
             const response = await action();
             return response.data;

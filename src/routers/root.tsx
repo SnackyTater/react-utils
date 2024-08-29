@@ -1,9 +1,6 @@
 import { createBrowserRouter, createRoutesFromElements, Route } from "react-router-dom";
 import PrivateRoute from "./private";
-import PublicRoute from "./public";
-import HomePage from "@/pages/Home";
 import LoginPage from '@/modules/login/page';
-// import LoginPage from "@/pages/Login";
 import ErrorPage from "@/pages/Error";
 import { MainHookPage, UseDebounceValuePage, UseIntersectionObserverPage } from '@/pages/Hooks';
 
