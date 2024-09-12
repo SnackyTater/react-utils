@@ -14,6 +14,7 @@ export default defineConfig({
       '@types': path.resolve(__dirname, './src/types'),
       '@wrappers': path.resolve(__dirname, './src/wrappers'),
       '@modules': path.resolve(__dirname, './src/modules'),
+      '@utils': path.resolve(__dirname, './src/utils'),
     }
   }
 })

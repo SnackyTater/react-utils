@@ -33,6 +33,7 @@
       "@routers/*": ["src/routers/*"],
       "@types/*": ["src/types/*"],
       "@wrappers/*": ["src/wrappers/*"],
+      "@utils/*": ["src/utils/*"],
     }
   },
   "include": ["src"],

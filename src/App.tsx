@@ -4,6 +4,7 @@
 // import useAuthStore from './states/auth';
 // import { getAuthSession } from './utils/session';
 import './global.css';
+import LoginPage from './pages/login/login';
 
 function App() {
   // const { setIsLogin } = useAuthStore();
@@ -15,7 +16,7 @@ function App() {
 
   // return <RouterProvider router={rootRouter}/>
 
-  return <div>react app</div>
+  return <LoginPage />
 }
 
 export default App
