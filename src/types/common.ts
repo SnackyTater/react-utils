@@ -1,0 +1,1 @@
+export type GenericFunction<T> = (value: T) => void;

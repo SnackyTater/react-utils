@@ -1,0 +1,22 @@
+.snackbar-entry {
+    display: block;
+    position: relative;
+    animation-name: entry;
+    animation-duration: 500ms;
+}
+
+.snackbar-out {
+    position: relative;
+    animation-name: out;
+    animation-duration: 500ms;
+}
+
+@keyframes entry {
+    0% { left: 400px; }
+    100% { left: 0px;  }
+}
+
+@keyframes out {
+    0% { left: 0px;}
+    100% { left: 400px; display: none;}
+}
