@@ -1,7 +1,7 @@
-import { Snackbar } from "@/components/snackbars";
-import { useNavigate } from "react-router-dom";
-import { observer } from "@/utils/observer";
 import { useEffect } from "react";
+import { useNavigate } from "react-router-dom";
+import { generateKey, generateSecret, encryptString, decryptString, getDeviceFingerprint } from '@/utils/security';
+import { getCookieValue, setCookie } from '@/utils/cookie';
 
 const LandingPage = () => {
     const navigate = useNavigate();
@@ -9,21 +9,24 @@ const LandingPage = () => {
     const handleLogin = () => navigate('/login');
 
     useEffect(() => {
-        // setTimeout(() => {
-        //     observer.notify('snackbar', {variant: 'success', message: 'hei hei'})
-        //     observer.notify('snackbar', {variant: 'success', message: 'hei hei'})
-        //     observer.notify('snackbar', {variant: 'success', message: 'hei hei'})
-        // }, 1000)
-
-        setInterval(() => {
-            observer.notify('snackbar', {variant: 'success', message: 'hei hei'})
-        }, (2000));
+        (async function(){
+            const secret = generateSecret();
+            const key = await generateKey(secret);
+            const fingerprint = getDeviceFingerprint();
+            const data = JSON.stringify({ fingerprint, data: 'hei hei' });
+            const encryptedData = await encryptString(data, key);
+            console.log('encryptedData', JSON.stringify(fingerprint))
+            setCookie('data', encryptedData);
+            setCookie('key', secret);
+            const cookie = getCookieValue('data');
+            const decryptedData = await decryptString(encryptedData, key);
+            console.log('decryptedData', decryptedData)
+        })()
     }, [])
 
 
     return <div>LandingPage
         <button onClick={handleLogin}>login</button>
-        <Snackbar />
     </div>
 };
 

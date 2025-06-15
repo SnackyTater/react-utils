@@ -12,7 +12,7 @@ export const getCookieValue = (name: string) => {
 export const setCookie = (name: string, value: any, daysToExpire = 30) => {
   const date = new Date();
   date.setTime(date.getTime() + daysToExpire * 24 * 60 * 60 * 1000);
-  document.cookie = `${name}=${value}; expires=${date.toUTCString()}; path=/; secure; HttpOnly; SameSite=Strict`;
+  document.cookie = `${name}=${value}; expires=${date.toUTCString()}; path=/; secure; SameSite=Strict`;
 };
   
 export const removeCookie = (name: string) => {

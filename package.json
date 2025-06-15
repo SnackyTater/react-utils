@@ -12,6 +12,7 @@
     "prepare": "husky"
   },
   "dependencies": {
+    "antd": "^5.26.0",
     "axios": "^1.7.2",
     "path": "^0.12.7",
     "react": "^18.2.0",
