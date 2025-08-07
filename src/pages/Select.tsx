@@ -40,7 +40,7 @@ const SelectPage = () => {
 
     return <div className='p-5'>
         <p>select</p>
-        <Form>
+        <Form form={form}>
             <Form.Item name={'tags'} label={'tags'}>
                 <Select
                     mode="tags"
