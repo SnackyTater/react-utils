@@ -5,13 +5,13 @@ import { AuthInfo } from "@/types/auth";
 import { Response } from "@/types/response";
 
 class AuthProxy extends AxiosProxy {
-    login = (params: any) => this.post({url: 'login', data: params})
+  login = (params: AuthParams): Promise<Response<AuthInfo>> => this.post({ url: 'login', data: params })
 }
 
 const MasterAuthProxy = new AuthProxy();
 
 class AuthService extends AxiosService {
-    login = (params: AuthParams): Promise<Response<AuthInfo>> => this.fetch(() => MasterAuthProxy.login(params))
+  login = (params: AuthParams) => this.fetch(() => MasterAuthProxy.login(params))
 }
 
 const MasterAuthService = new AuthService();

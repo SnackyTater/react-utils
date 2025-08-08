@@ -1,12 +1,12 @@
 export class AxiosService {
-    fetch = async(action: () => Promise<any>) => {
+    fetch = async <T>(action: () => Promise<T>) => {
         try{
             const response = await action();
-            return response.data;
+            return response;
         } catch(err: any) {
             return {
                 success: false,
-                code: err.request.status,
+                code: err.request?.status,
                 data: null,
             }
         }
